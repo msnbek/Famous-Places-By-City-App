@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="famousPlacesByCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a6r-11-CO6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a6r-11-CO6" secondAttribute="bottom" id="LBe-ux-8TS"/>
+                            <constraint firstItem="a6r-11-CO6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ni7-bX-rVP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a6r-11-CO6" secondAttribute="trailing" id="iRL-19-Cma"/>
+                            <constraint firstItem="a6r-11-CO6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lNd-VU-513"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="a6r-11-CO6" id="gAc-ES-cUf"/>
+                        <segue destination="Axa-UX-7I7" kind="show" identifier="toDetailsVC" id="ZRb-L9-9vI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1158" y="68"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="xRN-nf-wQ2">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="Axa-UX-7I7" customClass="DetailsVC" customModule="famousPlacesByCity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fW8-11-0mA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Landmark Name :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rR-jW-Ny6">
+                                <rect key="frame" x="114" y="119" width="187" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="U7c-x4-SuE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="colosseum" translatesAutoresizingMaskIntoConstraints="NO" id="p2e-jc-Gvs">
+                                <rect key="frame" x="87" y="319" width="240" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="262" id="rrW-Qy-pcT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9fi-ns-cea"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5rR-jW-Ny6" firstAttribute="leading" secondItem="9fi-ns-cea" secondAttribute="leading" constant="114" id="0qh-BO-QNa"/>
+                            <constraint firstItem="5rR-jW-Ny6" firstAttribute="top" secondItem="9fi-ns-cea" secondAttribute="top" constant="63" id="NrJ-mh-xWi"/>
+                            <constraint firstItem="9fi-ns-cea" firstAttribute="bottom" secondItem="p2e-jc-Gvs" secondAttribute="bottom" constant="227" id="VU3-Qa-vBf"/>
+                            <constraint firstItem="p2e-jc-Gvs" firstAttribute="leading" secondItem="9fi-ns-cea" secondAttribute="leading" constant="87" id="los-ty-2Qp"/>
+                            <constraint firstItem="5rR-jW-Ny6" firstAttribute="centerX" secondItem="p2e-jc-Gvs" secondAttribute="centerX" id="oqo-rF-Xgj"/>
+                            <constraint firstItem="5rR-jW-Ny6" firstAttribute="centerX" secondItem="fW8-11-0mA" secondAttribute="centerX" id="ort-Wc-WFk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="at8-zt-EZi"/>
+                    <connections>
+                        <outlet property="imageView" destination="p2e-jc-Gvs" id="dO2-KR-yLY"/>
+                        <outlet property="labelLandmarkName" destination="5rR-jW-Ny6" id="h7K-dF-bUs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVc-qi-XzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2031.8840579710147" y="67.633928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="colosseum" width="880" height="495"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
